@@ -1,4 +1,4 @@
-edu.ucalgary.oop package;
+package edu.ucalgary.oop;
 
 public class ReliefService{
     private Inquirer inquirer;
@@ -24,9 +24,17 @@ public class ReliefService{
         this.missingPerson = missingPerson;
     }
 
-    public void setDateOfInquiry( String dateOfInquiry){
+    private boolean isValidDateFormat(String date) {
+        return date.matches("\\d{4}-\\d{2}-\\d{2}"); // Example format: YYYY-MM-DD
+    }
+
+    public void setDateOfInquiry(String dateOfInquiry) {
+        if (!isValidDateFormat(dateOfInquiry)) {
+            throw new IllegalArgumentException("Invalid date format: " + dateOfInquiry);
+        }
         this.dateOfInquiry = dateOfInquiry;
     }
+
 
     public void setInfoProvided( String infoProvided){
         this.infoProvided = infoProvided;
