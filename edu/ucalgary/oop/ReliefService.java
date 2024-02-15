@@ -1,4 +1,6 @@
 package edu.ucalgary.oop;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ReliefService{
     private Inquirer inquirer;
@@ -24,15 +26,13 @@ public class ReliefService{
         this.missingPerson = missingPerson;
     }
 
-    private boolean isValidDateFormat(String date) {
-        return date.matches("\\d{4}-\\d{2}-\\d{2}"); // Example format: YYYY-MM-DD
-    }
-
-    public void setDateOfInquiry(String dateOfInquiry) {
-        if (!isValidDateFormat(dateOfInquiry)) {
+    public void setDateOfInquiry(String dateOfInquiry) throws IllegalArgumentException{
+        if (dateOfInquiry.matches("\\d{4}-\\d{2}-\\d{2}")) {
+            this.dateOfInquiry = dateOfInquiry;
+        }
+        else{
             throw new IllegalArgumentException("Invalid date format: " + dateOfInquiry);
         }
-        this.dateOfInquiry = dateOfInquiry;
     }
 
 
@@ -72,7 +72,7 @@ public class ReliefService{
         Location lastKnownLocation = getLastKnownLocation();
 
         return "Inquirer: " + inquirer.getFirstName() +", "+
-               "Missing Person: " + missingPerson.getFirstName() + missingPerson.getLastName()+ ", "+
+               "Missing Person: " + missingPerson.getFirstName() + ", "+
                "Date of Inquiry: " + dateOfInquiry +", "+ 
                "Info Provided: " + infoProvided +", "+
                "Last Known Location: " + lastKnownLocation.getName();
