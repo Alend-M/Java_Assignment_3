@@ -1,5 +1,5 @@
 package edu.ucalgary.oop;
-/*javac -cp ".;junit-4.13.2.jar;hamcrest-core-1.3.jar" edu\ucalgary\oop\MedicalRecordTest.java*/
+/*javac -cp ".;junit-4.13.2.jar;hamcrest-core-1.3.jar" edu\\ucalgary\\oop\\MedicalRecordTest.java*/
 //java -cp ".;junit-4.13.2.jar;hamcrest-core-1.3.jar" org.junit.runner.JUnitCore edu.ucalgary.oop.MedicalRecordTest
 public class MedicalRecord {
     private Location location; 
