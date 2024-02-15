@@ -6,12 +6,13 @@ See LICENSE.txt for more information.
 
 package edu.ucalgary.oop;
 
+import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 public class DisasterVictimTest {
     private DisasterVictim victim;
