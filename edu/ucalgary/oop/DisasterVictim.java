@@ -1,5 +1,7 @@
 package edu.ucalgary.oop;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -9,10 +11,10 @@ public class DisasterVictim {
     private String dateOfBirth;
     private String comments;
     private int ASSIGNED_SOCIAL_ID;
-    private List<MedicalRecord> medicalRecords;
-    private List<FamilyRelation> familyConnections;
+    private ArrayList<MedicalRecord> medicalRecords;
+    private ArrayList<FamilyRelation> familyConnections;
     private String ENTRY_DATE;
-    private List<Supply> personalBelongings;
+    private ArrayList<Supply> personalBelongings;
     private String gender;
     private int counter;
 
@@ -40,7 +42,7 @@ public class DisasterVictim {
     public String getComments() {
         return this.comments;
     }
-    public List<MedicalRecord> getMedicalRecords() {
+    public ArrayList<MedicalRecord> getMedicalRecords() {
         return this.medicalRecords;
     }
     public String getENTRY_DATE() {
@@ -49,10 +51,10 @@ public class DisasterVictim {
     public int getASSIGNED_SOCIAL_ID() {
         return this.ASSIGNED_SOCIAL_ID;
     }
-    public List<Supply> getPersonalBelongings() {
+    public ArrayList<Supply> getPersonalBelongings() {
         return this.personalBelongings;
     }
-    public List<FamilyRelation> getFamilyConnections() {
+    public ArrayList<FamilyRelation> getFamilyConnections() {
         return this.familyConnections;
     }
     public String getGender() {
@@ -77,13 +79,13 @@ public class DisasterVictim {
     public void setComments(String comments) {
         this.comments = comments;
     }
-    public void setMedicalRecords(List<MedicalRecord> medicalRecords) {
+    public void setMedicalRecords(ArrayList<MedicalRecord> medicalRecords) {
         this.medicalRecords = medicalRecords;
     }
-    public void setPersonalBelongings(List<Supply> supplies) {
+    public void setPersonalBelongings(ArrayList<Supply> supplies) {
         this.personalBelongings = supplies;
     }
-    public void setFamilyConnections(List<FamilyRelation> familyConnections) {
+    public void setFamilyConnections(ArrayList<FamilyRelation> familyConnections) {
         this.familyConnections = familyConnections;
     }
     public void setGender(String gender) {
