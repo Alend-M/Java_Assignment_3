@@ -108,7 +108,7 @@ public class DisasterVictim {
     public void addMedicalRecord(MedicalRecord medicalRecord) {
         this.medicalRecords.add(medicalRecord);
     }
-    public static int getCounter() { // Make getter static
+    public static int getCounter() {
         return counter; 
     }
 }
