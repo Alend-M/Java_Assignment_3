@@ -1,7 +1,6 @@
 package edu.ucalgary.oop;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -11,12 +10,12 @@ public class DisasterVictim {
     private String dateOfBirth;
     private String comments;
     private int ASSIGNED_SOCIAL_ID;
-    private ArrayList<MedicalRecord> medicalRecords;
-    private ArrayList<FamilyRelation> familyConnections;
+    private ArrayList<MedicalRecord> medicalRecords = new ArrayList<>();
+    private ArrayList<FamilyRelation> familyConnections = new ArrayList<>();
     private String ENTRY_DATE;
-    private ArrayList<Supply> personalBelongings;
+    private ArrayList<Supply> personalBelongings = new ArrayList<>();
     private String gender;
-    private int counter;
+    private static int counter = 0;
 
     public DisasterVictim(String firstName, String ENTRY_DATE) throws IllegalArgumentException{
         this.firstName = firstName;
@@ -28,6 +27,7 @@ public class DisasterVictim {
         else {
             throw new IllegalArgumentException();
         }
+        this.ASSIGNED_SOCIAL_ID = counter++; 
     }
 
     public String getFirstName() {
@@ -45,12 +45,14 @@ public class DisasterVictim {
     public ArrayList<MedicalRecord> getMedicalRecords() {
         return this.medicalRecords;
     }
-    public String getENTRY_DATE() {
+    public String getEntryDate() {
         return this.ENTRY_DATE;
     }
-    public int getASSIGNED_SOCIAL_ID() {
+    
+    public int getAssignedSocialID() {
         return this.ASSIGNED_SOCIAL_ID;
     }
+    
     public ArrayList<Supply> getPersonalBelongings() {
         return this.personalBelongings;
     }
@@ -105,5 +107,8 @@ public class DisasterVictim {
     }
     public void addMedicalRecord(MedicalRecord medicalRecord) {
         this.medicalRecords.add(medicalRecord);
+    }
+    public static int getCounter() {
+        return counter; 
     }
 }
